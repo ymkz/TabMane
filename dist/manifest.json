@@ -2,15 +2,15 @@
   "manifest_version": 2,
   "version": "1.0.0",
   "name": "TabMane",
-  "short_name": "tabmane",
-  "description": "tabmane is tabs manager",
+  "short_name": "TabMane",
+  "description": "TabMane is tabs manager: synchronize between multiple browsers",
   "permissions": [
     "tabs",
     "storage",
     "contextMenus",
     "<all_urls>"
   ],
-  "options_page": "option.html",
+  // "options_page": "option.html",
   "background": {
     "scripts": [ "background.bundle.js" ]
   },

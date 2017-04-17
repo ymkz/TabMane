@@ -1,7 +1,9 @@
 :root {
   --default-padding: 8px;
   --default-size: 16px;
-  --components-padding: 40px;
+  --header-padding: 64px;
+  --components-padding-ud: 32px;
+  --components-padding-lr: 48px;
   --link-color: #1fc8db;
   --link-color-hover: #847bb9;
   --border-color: #cccccc;

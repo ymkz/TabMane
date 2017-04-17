@@ -1,18 +1,17 @@
 {
   "name": "tabmane",
   "version": "1.0.0",
-  "main": "index.js",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ymkz/tabmane.git"
+    "url": "git+https://github.com/ymkz/TabMane.git"
   },
   "bugs": {
-    "url": "https://github.com/ymkz/tabmane/issues"
+    "url": "https://github.com/ymkz/TabMane/issues"
   },
   "scripts": {
-    "dev": "webpack --progress --color --devtool source-map --watch --display-error-details",
-    "build": "webpack --progress --color --devtool source-map --display-error-details",
+    "dev": "webpack --progress --color --watch --display-error-details",
+    "build": "webpack --progress --color --display-error-details",
     "clean": "rm -rf node_modules/ && yarn cache clean && yarn install",
     "archive": "zip -r tabmane.zip dist",
     "release": "npm-run-all build archive"
@@ -27,8 +26,7 @@
     "react-redux": "^5.0.4",
     "redux": "^3.6.0",
     "redux-act": "^1.1.1",
-    "redux-logger": "^3.0.1",
-    "store": "^2.0.4"
+    "redux-logger": "^3.0.1"
   },
   "devDependencies": {
     "babel-core": "^6.24.1",

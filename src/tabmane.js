@@ -3,12 +3,9 @@ import ReactDOM from 'react-dom'
 import { createStore, applyMiddleware, compose } from 'redux'
 import { Provider } from 'react-redux'
 import logger from 'redux-logger'
-
 import reducers from './reducers'
-
-import App from './components/app'
-
-import styles from './styles/init.css'
+import App from './containers/app'
+import './styles/init.css'
 
 const middleware = [ logger ]
 const store = compose(
@@ -17,7 +14,7 @@ const store = compose(
 
 ReactDOM.render(
   <Provider store={store}>
-    <App className={styles} />
+    <App />
   </Provider>,
   document.getElementById('root')
 )

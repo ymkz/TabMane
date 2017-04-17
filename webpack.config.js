@@ -42,13 +42,6 @@ module.exports = {
             }
           }
         ]
-      },
-      {
-        test: /\.png$/,
-        include: resolve(__dirname, 'src'),
-        use: [
-          'url-loader'
-        ]
       }
     ]
   }

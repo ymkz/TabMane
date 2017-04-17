@@ -15,6 +15,10 @@ function handleClick (event) {
   })
 }
 
+function handleRemove (event) {
+  handleClick(event)
+}
+
 class App extends Component {
   componentWillMount () {
     chrome.storage.sync.get(items => {
@@ -39,14 +43,13 @@ class App extends Component {
             <span className={styles.info}>is tabs manager: synchronize between multiple browsers</span>
           </div>
           <div className={styles.icons}>
-            <a className={styles.icon} href={chrome.runtime.getURL('option.html')} target='_blank'><i className='fa fa-fw fa-cog' aria-hidden='true' /></a>
-            <a className={styles.icon} href='https://github.com/ymkz/tabmane' target='_blank'><i className='fa fa-fw fa-github' aria-hidden='true' /></a>
+            <a className={styles.icon} href='https://github.com/ymkz/TabMane' target='_blank'><i className='fa fa-fw fa-github' aria-hidden='true' /></a>
           </div>
         </div>
         <div className={styles.components}>
           {this.props.data.map((item, index) => (
             <div className={styles.tab} key={index}>
-              <div className={styles.remove}><i className='zmdi zmdi-close' data-id={index} onClick={handleClick} /></div>
+              <div className={styles.remove}><i className='zmdi zmdi-close' data-id={index} onClick={handleRemove} /></div>
               <img className={styles.favicon} src={item.favIconUrl} />
               <a className={styles.link} href={item.url} target='_blank' data-id={index} onClick={handleClick}>{item.title}</a>
             </div>
@@ -70,3 +73,5 @@ function mapDispatchToProps (dispatch) {
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(App)
+
+// <a className={styles.icon} href={chrome.runtime.getURL('option.html')} target='_blank'><i className='fa fa-fw fa-cog' aria-hidden='true' /></a>
