@@ -1,0 +1,91 @@
+.container {
+  font-family: 'Roboto', 'Noto Sans Japanese';
+  font-weight: 500;
+}
+
+.header {
+  border-bottom: 1px dashed var(--border-color);
+  height: 100px;
+  font-size: 3em;
+  font-weight: 100;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  padding: 0 var(--components-padding);
+}
+
+.title {
+  display: flex;
+  flex-flow: row nowrap;
+  flex-grow: 1;
+  align-items: flex-end;
+}
+
+.name {
+  text-shadow: 1px 1px 3px var(--text-shadow);
+}
+
+.info {
+  font-size: var(--default-size);
+  padding: var(--default-padding);
+}
+
+.icons {
+  display: flex;
+  flex-flow: row nowrap;
+  color: var(--icon-color);
+  text-shadow: 1px 1px 3px var(--text-shadow);
+}
+
+.icon {
+  color: inherit;
+}
+.icon:hover {
+  transform: scale(1.1);
+  transition: ease-in .2s;
+}
+
+.components {
+  display: flex;
+  flex-flow: column-reverse wrap;
+  padding: var(--components-padding) 0;
+}
+
+.tab {
+  display: flex;
+  align-items: center;
+  padding: 4px var(--default-size);
+  min-height: calc(var(--default-size) * 2);
+}
+.tab:hover > .remove {
+  visibility: visible;
+}
+
+.remove {
+  visibility: hidden;
+  width: var(--default-size);
+  height: var(--default-size);
+  margin-top: -2px;
+  cursor: pointer;
+  color: var(--icon-color);
+}
+.remove:hover {
+  transform: scale(1.1);
+  transition: ease-in .2s;
+}
+
+.favicon {
+  width: var(--default-size);
+  height: var(--default-size);
+  margin: 0 var(--default-size) 0 calc(var(--default-size) / 2);
+}
+
+.link {
+  font-size: var(--default-size);
+  color: var(--link-color);
+  text-decoration: none;
+}
+.link:hover {
+  color: var(--link-color-hover);
+  text-decoration: underline;
+}

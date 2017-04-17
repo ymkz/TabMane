@@ -12,7 +12,7 @@
   ],
   "options_page": "option.html",
   "background": {
-    "scripts": ["background.js"]
+    "scripts": [ "background.bundle.js" ]
   },
   "browser_action": {
   }

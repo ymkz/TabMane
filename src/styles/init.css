@@ -1,0 +1,52 @@
+:root {
+  --default-padding: 8px;
+  --default-size: 16px;
+  --components-padding: 40px;
+  --link-color: #1fc8db;
+  --link-color-hover: #847bb9;
+  --border-color: #cccccc;
+  --icon-color: #424242;
+  --text-shadow: #cccccc;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,300,500');
+@import url('https://fonts.googleapis.com/earlyaccess/notosansjapanese.css');
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html, body, div, span, a, p, img, ul, li, label, h1, h2, h3, h4, h5, input, textarea {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+}
+
+html, body, {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+html {
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+  background-color: rgba(0, 0, 0, 0);
+  border-radius: 100px;
+}
+::-webkit-scrollbar-thumb:vertical {
+  background: rgba(0, 0, 0, .5);
+  border-radius: 100px;
+}
+::-webkit-scrollbar-thumb:vertical:active {
+  background: rgba(0, 0, 0, .7);
+  border-radius: 100px;
+}

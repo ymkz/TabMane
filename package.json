@@ -3,10 +3,46 @@
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
-  "devDependencies": {
-    "standard": "^10.0.1"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ymkz/tabmane.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ymkz/tabmane/issues"
+  },
+  "scripts": {
+    "dev": "webpack --progress --color --devtool source-map --watch --display-error-details",
+    "build": "webpack --progress --color --devtool source-map --display-error-details",
+    "clean": "rm -rf node_modules/ && yarn cache clean && yarn install",
+    "archive": "zip -r syncedtabs.zip dist",
+    "release": "npm-run-all build archive"
+  },
+  "standard": {
+    "parser": "babel-eslint"
   },
   "dependencies": {
+    "react": "^15.5.4",
+    "react-dom": "^15.5.4",
+    "react-look": "^1.0.1",
+    "react-redux": "^5.0.4",
+    "redux": "^3.6.0",
+    "redux-act": "^1.1.1",
+    "redux-logger": "^3.0.1",
     "store": "^2.0.4"
+  },
+  "devDependencies": {
+    "babel-core": "^6.24.1",
+    "babel-eslint": "^7.2.2",
+    "babel-loader": "^6.4.1",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "css-loader": "^0.28.0",
+    "file-loader": "^0.11.1",
+    "npm-run-all": "^4.0.2",
+    "standard": "^10.0.1",
+    "style-loader": "^0.16.1",
+    "url-loader": "^0.5.8",
+    "webpack": "^2.4.1"
   }
 }

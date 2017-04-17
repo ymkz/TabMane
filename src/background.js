@@ -1,4 +1,4 @@
-function makeItem ({ title, url, favIconUrl }) {
+function pick ({ title, url, favIconUrl }) {
   return {
     title: title,
     url: url,
@@ -6,32 +6,30 @@ function makeItem ({ title, url, favIconUrl }) {
   }
 }
 
-function makeItemWithChange ({ title, url, favIconUrl }) {
-  return {
-    title: title.newValue,
-    url: url.newValue,
-    favIconUrl: favIconUrl.newValue
-  }
-}
-
-function addItemToLocalstorage (item) {
-  const items = JSON.parse(window.localStorage.getItem('items')) || []
-  items.push(item)
-  window.localStorage.setItem('items', JSON.stringify(items))
+function add (tab) {
+  chrome.storage.sync.get(items => {
+    const alo = Object.assign({}, items, { length: Object.keys(items).length })
+    const arr = Array.from(alo)
+    arr.push(pick(tab))
+    const next = Object.assign({}, arr)
+    chrome.storage.sync.set(next)
+  })
 }
 
 chrome.contextMenus.onClicked.addListener(function (info, tab) {
   switch (info.menuItemId) {
     case 'displayPage':
-      chrome.tabs.create({url: chrome.runtime.getURL('tabmane.html')})
+      chrome.tabs.create({ url: chrome.runtime.getURL('tabmane.html') })
       break
     case 'sendOnly':
-      chrome.storage.sync.set(makeItem(tab))
+      add(tab)
+      console.debug('SET')
+      break
+    case 'sendAll':
       console.debug('SET')
       break
     case 'resetStorage':
       chrome.storage.sync.clear(function () {
-        window.localStorage.clear()
         console.debug('CLEAR')
       })
       break
@@ -43,7 +41,6 @@ chrome.contextMenus.onClicked.addListener(function (info, tab) {
 
 chrome.storage.onChanged.addListener(function (changes, areaName) {
   console.debug('CHANGE', changes)
-  addItemToLocalstorage(makeItemWithChange(changes))
 })
 
 chrome.runtime.onInstalled.addListener(function () {
@@ -79,7 +76,7 @@ chrome.runtime.onInstalled.addListener(function () {
 chrome.browserAction.onClicked.addListener(function (tab) {
   // アイコンをクリックした時に表示しているページに関する`tabs.Tab`の情報が引数に入る
   // オプションで現在のページを送るか、すべてのページを送るか選択できるようにしたい
-  chrome.storage.sync.set(makeItem(tab))
+  add(tab)
   console.debug('SET')
 })
 
