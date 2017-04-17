@@ -27,3 +27,8 @@ Chrome Extension API + React + Redux + CSS Modules + ES6 + JS Standard Lint
 * タブのグループに名前付けを可能に
 * タブの固定(削除不可)を可能に
 
+
+# CHANGELOG
+* v1.0.1 (2017/04/18) ready to display store(promotion, icon)
+* v1.0.0 (2017/04/17) release for sync test
+
