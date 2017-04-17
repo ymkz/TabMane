@@ -14,7 +14,7 @@
     "dev": "webpack --progress --color --devtool source-map --watch --display-error-details",
     "build": "webpack --progress --color --devtool source-map --display-error-details",
     "clean": "rm -rf node_modules/ && yarn cache clean && yarn install",
-    "archive": "zip -r syncedtabs.zip dist",
+    "archive": "zip -r tabmane.zip dist",
     "release": "npm-run-all build archive"
   },
   "standard": {
